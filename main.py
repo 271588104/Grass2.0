@@ -1,11 +1,11 @@
+import argparse
 import os
 import uuid
-import json
-import aiohttp
-import argparse
 from datetime import datetime, timezone
-from fake_useragent import UserAgent
+
+import aiohttp
 from colorama import *
+from fake_useragent import UserAgent
 
 green = Fore.LIGHTGREEN_EX
 red = Fore.LIGHTRED_EX
@@ -57,11 +57,11 @@ class Grass:
                     await self.ses.close()
                     return
                 async with self.ses.ws_connect(
-                    "wss://proxy2.wynd.network:4650/",
-                    headers=headers,
-                    proxy=self.proxy,
-                    timeout=1000,
-                    autoclose=False,
+                        "wss://proxy2.wynd.network:4650/",
+                        headers=headers,
+                        proxy=self.proxy,
+                        timeout=1000,
+                        autoclose=False,
                 ) as wss:
                     res = await wss.receive_json()
                     auth_id = res.get("id")
@@ -151,6 +151,7 @@ async def main():
 if __name__ == "__main__":
     try:
         import asyncio
+
         if os.name == "nt":
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         asyncio.run(main())
