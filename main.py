@@ -47,7 +47,6 @@ class Grass:
             "Cache-Control": "no-cache",
             "User-Agent": useragent,
             "Upgrade": "websocket",
-            "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi",
             "Sec-WebSocket-Version": "13",
             "Accept-Language": "en-US,en;q=0.9,id;q=0.8",
         }
@@ -77,9 +76,8 @@ class Grass:
                             "user_id": self.userid,
                             "user_agent": useragent,
                             "timestamp": int(datetime.now().timestamp()),
-                            "device_type": "extension",
-                            "version": "4.26.2",
-                            "extension_id": "lkbnfiajjmbhnfledhphioinpickokdi",
+                            "device_type": "desktop",
+                            "version": "4.28.1",
                         },
                     }
                     await wss.send_json(auth_data)

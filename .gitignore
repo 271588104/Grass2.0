@@ -6,3 +6,4 @@ env
 *.html
 !token.txt
 !userid.txt
+.idea
