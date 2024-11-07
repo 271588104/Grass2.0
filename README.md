@@ -39,7 +39,7 @@ socks5://user:password@host:port
 
 4. 进入 grass 文件夹：
    ```shell
-   cd grass2.0
+   cd Grass2.0
    ```
 
 5. 然后安装所需的库：
